@@ -2,9 +2,9 @@ source('data_source_handler.R')
 source('data_cleaner.R')
 source('statistics_logic.R')
 
-raw.phone.sensor.data = getRawData()
+raw.phone.sensor.data <- getRawData()
 
-phone.sensor.data = do.call(cleanData, raw.phone.sensor.data)
+phone.sensor.data <- do.call(cleanData, raw.phone.sensor.data)
 
 rm(raw.phone.sensor.data)
 

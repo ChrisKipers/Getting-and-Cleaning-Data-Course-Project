@@ -2,13 +2,13 @@ library(plyr)
 
 cleanData <- function(x.train, y.train, x.test, y.test, activity.labels, features) {
   clean.feature.names <- sanitizeFeatureNames(features)
-  training.data = mergeXandYData(
+  training.data <- mergeXandYData(
     x.train,
     y.train,
     activity.labels,
     clean.feature.names)
   
-  testing.data = mergeXandYData(
+  testing.data <- mergeXandYData(
     x.test,
     y.test,
     activity.labels,
@@ -29,8 +29,8 @@ mergeXandYData <- function(x.table, y.table, activity.labels, features) {
 }
 
 mergeTrainingAndTestingData <- function(training.data, testing.data) {
-  training.data.with.type = cbind(training.data, result.type = 'training')
-  testing.data.with.time = cbind(testing.data, result.type = 'testing')
+  training.data.with.type <- cbind(training.data, result.type = 'training')
+  testing.data.with.time <- cbind(testing.data, result.type = 'testing')
   rbind(training.data.with.type, testing.data.with.time)
 }
 
