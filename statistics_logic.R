@@ -1,4 +1,5 @@
 library(dplyr)
+library(tidyr)
 
 getTotalSummary <- function(phone.sensor.data) {
   range.to.get.data <- 1:561
@@ -12,6 +13,8 @@ getTotalSummary <- function(phone.sensor.data) {
 }
 
 getAverageForVariableBySubjectAndActivity <- function(phone.sensor.data) {
-  grouped.phone.sensor.data <- group_by(phone.sensor.data, activity, result.type)
-  summarise_each(grouped, funs(mean), -c(activity, activity.id, result.type))
+  phone.sensor.data %>%
+    group_by(activity, result.type) %>%
+    summarise_each(funs(mean), -c(activity, activity.id, result.type)) %>%
+    gather(measurement, mean, tBodyAcc.mean.X:angle.Z.gravityMean)
 }
