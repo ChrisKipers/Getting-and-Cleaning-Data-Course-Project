@@ -3,7 +3,7 @@ Getting and Cleaning Data course project
 
 Overview
 --------
-The purpose of this project is to demonstrate my ability to collect, work with, and clean a data set. The goal is to prepare tidy data that can be used for later analysis.
+The purpose of this project is to demonstrate my ability to collect, work with, and clean a data set. The goal is to prepare tidy data that can be used for later analysis. This project is for the Coursera course [Getting and Cleaning Data](https://class.coursera.org/getdata-033)
 
 The data that is being tidied comes from UCI Machine Learning Respository and is phone sensor data collected from smart phones during different activities. The measurements are grouped by one of two result types, training and testing.
 
