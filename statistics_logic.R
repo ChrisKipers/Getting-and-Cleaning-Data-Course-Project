@@ -13,5 +13,5 @@ getTotalSummary <- function(phone.sensor.data) {
 
 getAverageForVariableBySubjectAndActivity <- function(phone.sensor.data) {
   grouped.phone.sensor.data <- group_by(phone.sensor.data, activity, result.type)
-  summarise_each(grouped, c(mean), -c(activity, activity.id, result.type))
+  summarise_each(grouped, funs(mean), -c(activity, activity.id, result.type))
 }
